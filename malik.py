@@ -93,8 +93,6 @@ def malik():
     opt = input('Choose option >>> ')
     if opt =='1':
         random_crack()
-    else:
-        print('\n\033[1;31mChoose valid option\033[0;97m'malik.py)
 def random_crack():
     os.system('clear')
     print(logo)
